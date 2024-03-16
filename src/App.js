@@ -1,9 +1,11 @@
 import logo from './logo.svg';
+import AddTask from './components/AddTask.js'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
+      <AddTask/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

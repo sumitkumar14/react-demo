@@ -9,7 +9,8 @@ const styles = {
         width: "350px"
     },
     mainContainer: {
-        textAlign: '-webkit-center'
+        textAlign: '-webkit-center',
+        height:"100vh"
     }
 }
 
@@ -30,12 +31,12 @@ function AddTasks() {
     const onTaskDescriptionChange = (e) => dispatch(updateTaskDescription(e.target.value))
 
     return (
-        <div style={styles.mainContainer}>
+        <div className="d-flex justify-content-center align-items-center" style={styles.mainContainer}>
             <div style={styles.taskContainer}>
-                <input type="text" placeholder="Task Title" onChange={onTaskTitleChange}  />
-                <input type="text" placeholder="Task Description" onChange={onTaskDescriptionChange}
+                <input type="text" className="border" placeholder="Task Title" onChange={onTaskTitleChange}  />
+                <input type="text" className="border mt-2" placeholder="Task Description" onChange={onTaskDescriptionChange}
                         />
-                <button onClick={onAddTask}>Add Task</button>
+                <button className="border-success mt-2 text-white bg-primary" onClick={onAddTask}>Add Task</button>
                 {tasks.map(task => <><div>{task.title}</div><div>{task.description}</div></>)}
             </div>
         </div>

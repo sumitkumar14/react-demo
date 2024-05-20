@@ -34,9 +34,9 @@ function AddTasks() {
 
         dispatch(addTask(task))
     };
-    const onClearTask = (id) => {
-       window.alert(id);
-        dispatch(clearTask(id))
+    const onClearTask = (task) => {
+       window.confirm(`Do you want to remove ${task.title}`);
+        dispatch(clearTask(task.id))
     };
     const onTaskTitleChange = (e) => dispatch(updateTaskTitle(e.target.value))
     const onTaskDescriptionChange = (e) => dispatch(updateTaskDescription(e.target.value))
@@ -53,7 +53,7 @@ function AddTasks() {
                     <div className="font-weight-bold col-6 pr-2">Task description</div>
                     <div className="font-weight-bold col-3 pr-2">Action</div>
                 </div>
-                {tasks.map(task => <TaskComponent task={task} id={task.id} onClear={onClearTask}/>
+                {tasks.map(task => <TaskComponent task={task} onClear={onClearTask}/>
                 )}
             </div>
         </div>

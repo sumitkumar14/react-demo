@@ -1,9 +1,16 @@
-import {ADD_TASK, UPDATE_TASK_DESCRIPTION, UPDATE_TASK_TITLE} from "./taskActionTypes";
+import {ADD_TASK, CLEAR_TASK, UPDATE_TASK_DESCRIPTION, UPDATE_TASK_TITLE} from "./taskActionTypes";
 
 export const addTask = (task) => {
     return {
         type: ADD_TASK,
         payload: task,
+    };
+};
+
+export const clearTask = (id) => {
+    return {
+        type: CLEAR_TASK,
+        payload: id,
     };
 };
 
